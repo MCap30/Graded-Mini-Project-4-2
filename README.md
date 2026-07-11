@@ -6,7 +6,7 @@ Privacy-first: the app never collects legal names, employer names, or employee I
 
 ## Live app
 
-TODO: add the deployed Vercel URL here once live.
+https://graded-mini-project-4-2-mscaparas30-9029s-projects.vercel.app
 
 ## Demo
 
