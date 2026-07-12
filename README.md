@@ -8,6 +8,7 @@ Privacy-first: the app never collects legal names, employer names, or employee I
 
 https://graded-mini-project-4-2-mscaparas30-9029s-projects.vercel.app
 # Use Sample Payslip.png located in same folder to test the app.
+# "Sample Payslip (No PII).png" is a synthetic version with fake data and the same layout, if you'd rather not use a real payslip.
 
 ## Demo
 
