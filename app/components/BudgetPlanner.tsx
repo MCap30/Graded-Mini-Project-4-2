@@ -1,12 +1,32 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { supabase } from '@/lib/supabase';
 import type { BudgetBreakdown } from '@/lib/types';
 
-export default function BudgetPlanner({ netPay }: { netPay: number }) {
+export default function BudgetPlanner({ userId, netPay }: { userId: string; netPay: number }) {
   const [remittance, setRemittance] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [breakdown, setBreakdown] = useState<BudgetBreakdown | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    supabase
+      .from('profiles')
+      .select('monthly_remittance')
+      .eq('id', userId)
+      .maybeSingle()
+      .then(({ data }) => {
+        if (!cancelled && data?.monthly_remittance != null) {
+          setRemittance(Number(data.monthly_remittance));
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [userId]);
 
   const handleCalculate = async () => {
     setLoading(true);
@@ -24,6 +44,7 @@ export default function BudgetPlanner({ netPay }: { netPay: number }) {
         return;
       }
       setBreakdown(result);
+      await supabase.from('profiles').update({ monthly_remittance: remittance }).eq('id', userId);
     } catch (err) {
       console.error(err);
       setError('Something went wrong while generating your budget.');

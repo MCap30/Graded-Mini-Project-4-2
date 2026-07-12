@@ -45,7 +45,9 @@ export default function Dashboard({ session }: { session: Session }) {
           />
 
           {latestPayslip && <DeductionExplainer payslip={latestPayslip} />}
-          {latestPayslip && <BudgetPlanner netPay={latestPayslip.net_pay} />}
+          {latestPayslip && (
+            <BudgetPlanner userId={session.user.id} netPay={latestPayslip.net_pay} />
+          )}
 
           <PayslipHistoryChart userId={session.user.id} refreshTrigger={refreshTrigger} />
         </div>
