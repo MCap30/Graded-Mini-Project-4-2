@@ -3,6 +3,7 @@ import { google } from '@ai-sdk/google';
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { validatePayslipFields } from '@/lib/validation';
+import { isTransientAiError } from '@/lib/ai-errors';
 
 export const runtime = 'nodejs';
 
@@ -84,6 +85,12 @@ export async function POST(request: Request) {
     return respondWithParsedResult(object);
   } catch (error) {
     console.error('parse-payslip error', error);
+    if (isTransientAiError(error)) {
+      return NextResponse.json(
+        { error: 'The AI service is temporarily busy. Please try again in a moment.' },
+        { status: 503 }
+      );
+    }
     return NextResponse.json({ error: 'Failed to parse payslip.' }, { status: 500 });
   }
 }

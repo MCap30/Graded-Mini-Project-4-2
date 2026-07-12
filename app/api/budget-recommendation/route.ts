@@ -3,6 +3,7 @@ import { google } from '@ai-sdk/google';
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { computeBudgetBreakdown } from '@/lib/budget';
+import { isTransientAiError } from '@/lib/ai-errors';
 
 export const runtime = 'nodejs';
 
@@ -46,6 +47,12 @@ Give at most 2 short, actionable, localized tips (2 sentences total) referencing
     });
   } catch (error) {
     console.error('budget-recommendation error', error);
+    if (isTransientAiError(error)) {
+      return NextResponse.json(
+        { error: 'The AI service is temporarily busy. Please try again in a moment.' },
+        { status: 503 }
+      );
+    }
     return NextResponse.json({ error: 'Failed to generate budget recommendation.' }, { status: 500 });
   }
 }
