@@ -41,7 +41,12 @@ export default function AuthForm() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-900 p-4 text-white">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-900 p-4 text-white">
+      <div className="mb-8 text-center">
+        <h1 className="text-4xl font-extrabold tracking-tight text-emerald-400">PaycheckPal</h1>
+        <p className="mt-2 text-sm text-gray-400">Know your sahod. Secure the bag.</p>
+      </div>
+
       <div className="w-full max-w-md rounded-2xl bg-gray-800 p-8 shadow-xl border border-gray-700">
         <h2 className="mb-6 text-3xl font-bold text-center tracking-tight text-emerald-400">
           {isRegister ? 'Create Account' : 'Welcome Back'}
