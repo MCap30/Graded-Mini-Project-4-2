@@ -10,7 +10,7 @@ https://graded-mini-project-4-2-mscaparas30-9029s-projects.vercel.app
 
 ## Demo
 
-TODO: add a link to the demo recording here.
+https://www.loom.com/share/70b3d33c119b4823b9960d78eb76b46f
 
 ## Features
 
