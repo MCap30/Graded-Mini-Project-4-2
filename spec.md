@@ -8,7 +8,7 @@
 
 \* \*Backend Database \& Auth:\* Supabase Database with Postgres Row Level Security (RLS) enabled for strict session isolation.
 
-\* \*AI Integration:\* Vercel AI SDK wrapper connecting to Anthropic Claude or OpenAI models.
+\* \*AI Integration:\* Vercel AI SDK (\`ai\` + \`@ai-sdk/google\`) wrapper connecting to Google Gemini (\`gemini-flash-latest\`), chosen for free-tier access with vision support for payslip image parsing.
 
 \* \*Deployment Pipeline:\* Vercel Hosting integrated with a public GitHub repository running GitHub Actions for continuous deployment.
 
@@ -94,7 +94,9 @@ The database layout strictly implements a privacy-first protocol, holding zero p
 
 \## 5. Architectural Implementation Strategy
 
-\* Next.js Server Components are heavily leveraged to run fast data operations.
+\* The dashboard is composed of client components (\`'use client'\`) that talk to Supabase directly from the browser using the authenticated session's JWT, which Row Level Security enforces against. This avoids needing \`@supabase/ssr\` cookie-based auth plumbing for an app this size.
+
+\* The two AI-calling endpoints (\`/api/parse-payslip\`, \`/api/budget-recommendation\`) are Next.js Route Handlers — the only server-side code in the app — since the LLM API keys must never reach the browser.
 
 \* Client-side interactions utilize React state objects to drive real-time view charts smoothly.
 
