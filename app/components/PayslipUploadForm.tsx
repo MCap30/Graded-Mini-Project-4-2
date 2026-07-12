@@ -217,7 +217,7 @@ export default function PayslipUploadForm({
         disabled={!enabled || loading}
         className="w-full rounded-lg bg-emerald-500 p-3 font-semibold text-gray-950 transition hover:bg-emerald-400 disabled:opacity-50"
       >
-        {loading ? 'Parsing...' : 'Parse Payslip'}
+        {loading ? 'Reading...' : 'Read Payslip'}
       </button>
     </div>
   );

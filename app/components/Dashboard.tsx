@@ -3,6 +3,7 @@ import { useState } from 'react';
 import type { Session } from '@supabase/supabase-js';
 import { supabase } from '@/lib/supabase';
 import type { Payslip } from '@/lib/types';
+import AboutSection from './AboutSection';
 import PrivacyDisclaimerModal from './PrivacyDisclaimerModal';
 import PayslipUploadForm from './PayslipUploadForm';
 import DeductionExplainer from './DeductionExplainer';
@@ -35,6 +36,8 @@ export default function Dashboard({ session }: { session: Session }) {
         </div>
 
         <div className="space-y-6">
+          <AboutSection />
+
           <PayslipUploadForm
             userId={session.user.id}
             enabled={privacyAcknowledged}
