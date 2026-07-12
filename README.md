@@ -22,7 +22,7 @@ https://www.loom.com/share/70b3d33c119b4823b9960d78eb76b46f
 4. **Payslip History** — a trend chart of gross vs. net pay across your last 6 saved payslips.
 5. **Privacy-First Onboarding** — an unskippable disclaimer explains what is (and isn't) stored before the upload feature unlocks.
 
-See [Phase1_IdeaValidation_PayslipAnalyzer.docx](Phase1_IdeaValidation_PayslipAnalyzer.docx) for the 7-step idea validation, [PRD.md](PRD.md) for the full product spec, and [spec.md](spec.md) for the technical spec and API contracts.
+See [Phase1_IdeaValidation_PayslipAnalyzer.pdf](Phase1_IdeaValidation_PayslipAnalyzer.pdf) for the 7-step idea validation, [PRD.md](PRD.md) for the full product spec, and [spec.md](spec.md) for the technical spec and API contracts.
 
 ## Tech stack
 
