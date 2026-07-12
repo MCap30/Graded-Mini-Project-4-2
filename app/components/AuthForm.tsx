@@ -54,7 +54,7 @@ export default function AuthForm() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-lg bg-gray-750 border border-gray-600 p-3 text-white focus:border-emerald-500 focus:outline-none"
+              className="w-full rounded-lg bg-gray-700 border border-gray-600 p-3 text-white focus:border-emerald-500 focus:outline-none"
               placeholder="you@example.com"
               required
             />
@@ -65,7 +65,7 @@ export default function AuthForm() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full rounded-lg bg-gray-750 border border-gray-600 p-3 text-white focus:border-emerald-500 focus:outline-none"
+              className="w-full rounded-lg bg-gray-700 border border-gray-600 p-3 text-white focus:border-emerald-500 focus:outline-none"
               placeholder="••••••••"
               required
             />

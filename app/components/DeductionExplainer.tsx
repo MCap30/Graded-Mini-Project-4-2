@@ -24,7 +24,7 @@ export default function DeductionExplainer({ payslip }: { payslip: ParsedPayslip
             <button
               key={key}
               onClick={() => setOpenKey(key)}
-              className="w-full flex items-center justify-between rounded-lg bg-gray-750 border border-gray-600 p-3 text-left hover:border-emerald-500 transition"
+              className="w-full flex items-center justify-between rounded-lg bg-gray-700 border border-gray-600 p-3 text-left hover:border-emerald-500 transition"
             >
               <span className="text-gray-200">{info.label}</span>
               <span className="flex items-center gap-2">

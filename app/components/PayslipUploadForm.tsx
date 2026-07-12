@@ -151,7 +151,7 @@ export default function PayslipUploadForm({
                 type="number"
                 value={fields[key]}
                 onChange={(e) => handleFieldChange(key, e.target.value)}
-                className="w-full rounded-lg bg-gray-750 border border-gray-600 p-2 text-white focus:border-emerald-500 focus:outline-none"
+                className="w-full rounded-lg bg-gray-700 border border-gray-600 p-2 text-white focus:border-emerald-500 focus:outline-none"
               />
             </div>
           ))}
@@ -201,7 +201,7 @@ export default function PayslipUploadForm({
           onChange={(e) => setRawText(e.target.value)}
           disabled={!enabled}
           rows={4}
-          className="w-full rounded-lg bg-gray-750 border border-gray-600 p-3 text-white focus:border-emerald-500 focus:outline-none disabled:opacity-50"
+          className="w-full rounded-lg bg-gray-700 border border-gray-600 p-3 text-white focus:border-emerald-500 focus:outline-none disabled:opacity-50"
           placeholder="Gross Pay: 30,000.00&#10;Net Pay: 24,500.00&#10;SSS: 900.00..."
         />
       </label>

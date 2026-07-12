@@ -45,7 +45,7 @@ export default function BudgetPlanner({ netPay }: { netPay: number }) {
           value={remittance}
           onChange={(e) => setRemittance(Number(e.target.value) || 0)}
           min={0}
-          className="w-full rounded-lg bg-gray-750 border border-gray-600 p-3 text-white focus:border-emerald-500 focus:outline-none"
+          className="w-full rounded-lg bg-gray-700 border border-gray-600 p-3 text-white focus:border-emerald-500 focus:outline-none"
         />
       </label>
 
@@ -66,15 +66,15 @@ export default function BudgetPlanner({ netPay }: { netPay: number }) {
       {breakdown && (
         <div className="mt-6">
           <div className="grid grid-cols-3 gap-3 text-center">
-            <div className="rounded-lg bg-gray-750 border border-gray-600 p-3">
+            <div className="rounded-lg bg-gray-700 border border-gray-600 p-3">
               <div className="text-xs text-gray-400">Needs (50%)</div>
               <div className="mt-1 font-mono text-emerald-300">₱{breakdown.needs.toFixed(2)}</div>
             </div>
-            <div className="rounded-lg bg-gray-750 border border-gray-600 p-3">
+            <div className="rounded-lg bg-gray-700 border border-gray-600 p-3">
               <div className="text-xs text-gray-400">Wants (30%)</div>
               <div className="mt-1 font-mono text-emerald-300">₱{breakdown.wants.toFixed(2)}</div>
             </div>
-            <div className="rounded-lg bg-gray-750 border border-gray-600 p-3">
+            <div className="rounded-lg bg-gray-700 border border-gray-600 p-3">
               <div className="text-xs text-gray-400">Savings (20%)</div>
               <div className="mt-1 font-mono text-emerald-300">₱{breakdown.savings.toFixed(2)}</div>
             </div>
