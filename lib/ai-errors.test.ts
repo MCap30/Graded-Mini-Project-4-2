@@ -9,6 +9,13 @@ describe('isTransientAiError', () => {
     expect(isTransientAiError(error)).toBe(true);
   });
 
+  it('detects a Gemini 429 quota-exhausted failure', () => {
+    const error = new Error(
+      'Failed after 3 attempts. Last error: AI_APICallError: You exceeded your current quota, please check your plan and billing details. Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests. status: RESOURCE_EXHAUSTED'
+    );
+    expect(isTransientAiError(error)).toBe(true);
+  });
+
   it('does not flag an unrelated error', () => {
     expect(isTransientAiError(new Error('Missing rawText.'))).toBe(false);
   });
