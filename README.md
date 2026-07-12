@@ -7,6 +7,7 @@ Privacy-first: the app never collects legal names, employer names, or employee I
 ## Live app
 
 https://graded-mini-project-4-2-mscaparas30-9029s-projects.vercel.app
+# Use Sample Payslip.png located in same folder to test the app.
 
 ## Demo
 
