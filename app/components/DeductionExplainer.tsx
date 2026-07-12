@@ -33,8 +33,15 @@ export default function DeductionExplainer({ payslip }: { payslip: ParsedPayslip
                     Check this
                   </span>
                 )}
-                <span className="font-mono text-emerald-300">
-                  ₱{payslip[key].toFixed(2)}
+                <span className="text-right">
+                  <span className="font-mono text-emerald-300">
+                    ₱{payslip[key].toFixed(2)}
+                  </span>
+                  {payslip.gross_pay > 0 && (
+                    <span className="ml-1 text-xs text-gray-400">
+                      ({((payslip[key] / payslip.gross_pay) * 100).toFixed(1)}% of gross)
+                    </span>
+                  )}
                 </span>
               </span>
             </button>
